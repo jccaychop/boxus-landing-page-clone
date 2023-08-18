@@ -21,8 +21,6 @@ export const ScrollToHashElement = () => {
 
   useEffect(() => {
     if (hashElement) {
-        console.log({hashElement});
-        
       hashElement.scrollIntoView({
         behavior: "smooth",
         // block: "end",

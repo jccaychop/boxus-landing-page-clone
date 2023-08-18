@@ -13,14 +13,9 @@
   }
 }
 
-
-
-/* .card-content {
-  overflow: hidden;
-  max-height: auto;
-  transition: max-height 5s linear;
+/* to use with useHTMLElementExpanded */
+#grow-parent {
+  @media (min-width: 926px) {
+    height: 4rem !important;
+  }
 }
-
-.card:hover > .card-content {
-  max-height: 0;
-} */
