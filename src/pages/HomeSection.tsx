@@ -5,7 +5,7 @@ export const HomeSection = () => {
   return (
     <Section
       id="home"
-      className="pb-[10.625rem] bg-space-cadet bg-repeat bg-center-top bg-cover"
+      className="pb-[10.625rem] bg-space-cadet bg-repeat bg-center-top bg-cover home-section"
       style={{ backgroundImage: `url(${backgroundImg01})` }}
     >
       <div className="text-white text-center m-0 mx-auto max-[1020px]:w-full max-[1270px]:w-[60rem] w-[73.125rem]">

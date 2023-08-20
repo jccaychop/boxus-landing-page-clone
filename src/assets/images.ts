@@ -19,7 +19,7 @@ import iconSound from "./images/icon_sound.png";
 import iconTime from "./images/icon_time.png";
 import iconVideo from "./images/icon_video.svg";
 import logo from "./images/logo.png";
-import navigationArrowRight from "./images/navigation_arrows_right.svg";
+import navigationArrowRight from "./images/navigation_arrow_right.svg";
 import portfolioItem01 from "./images/portfolio_item_01.jpg";
 import portfolioItem02 from "./images/portfolio_item_02.jpg";
 import portfolioItem05 from "./images/portfolio_item_05.jpg";

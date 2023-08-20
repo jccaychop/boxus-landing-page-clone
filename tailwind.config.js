@@ -10,6 +10,7 @@ export default {
       "dark-pink": "#E64B77",
       "pastel-orange-2": "#E3A436",
       "pastel-orange": "#FFBA42",
+      "platinum": "#DFDFEA",
       "space-cadet": "#221C5A",
       "ufo-green-2": "#55B286",
       "ufo-green": "#32DB8A",
@@ -20,7 +21,7 @@ export default {
       sm: "641px",
       md: "926px",
       lg: "1025px",
-      xl: "1281px",
+      xl: "1271px",
     },
 
     extend: {

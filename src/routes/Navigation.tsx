@@ -1,7 +1,7 @@
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { ScrollToHashElement } from "../components/scroll/ScrollToHashElement";
 import { Navbar } from "../components/navbar/Navbar";
-import { HomeSection } from "../pages/HomeSection";
+import { HomeSection, ServicesSection } from "../pages";
 
 const Root = () => {
   return (
@@ -24,9 +24,7 @@ const router = createBrowserRouter([
         <>
           <HomeSection/>
 
-          <section id="services" className="scroll-mt-[3.75rem] md:scroll-mt-16 mySection h-[1200px] bg-space-cadet text-white">
-            <div className="h-44 bg-united-nations-blue border border-[red]">Section Services</div>
-          </section>
+          <ServicesSection/>
 
           <section id="portfolio" className="scroll-mt-[3.75rem] md:scroll-mt-16 mySection h-[1200px] bg-pastel-orange text-white">
             <div className="h-44 bg-united-nations-blue border border-[red]">Section Portfolio</div>

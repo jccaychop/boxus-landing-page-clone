@@ -19,3 +19,14 @@
     height: 4rem !important;
   }
 }
+
+.home-section {
+  @media (max-width: 925px) {
+    min-height: 0px;
+  }
+}
+
+
+.animate__animated.animate__fadeIn {
+  --animate-duration: 1.5s;
+}
