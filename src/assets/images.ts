@@ -1,9 +1,10 @@
 import aboutImg02 from "./images/about_img_02.jpg";
 import aboutImg04 from "./images/about_img_04.jpg";
-import backgroundImg01 from "./images/background_img_01b.jpg";
+import backgroundImg01 from "./images/background_img_01.jpg";
 import backgroundImg02 from "./images/background_img_02.jpg";
 import backgroundImg03 from "./images/background_img_03.jpg";
 import backgroundImg04 from "./images/background_img_04.jpg";
+import backgroundImg05 from "./images/background_img_05.jpg";
 import backgroundImg06 from "./images/background_img_06.jpg";
 import icon01 from "./images/icon_01.png";
 import icon02 from "./images/icon_02.png";
@@ -33,6 +34,7 @@ export {
   backgroundImg02,
   backgroundImg03,
   backgroundImg04,
+  backgroundImg05,
   backgroundImg06,
   icon01,
   icon02,

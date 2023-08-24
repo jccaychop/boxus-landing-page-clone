@@ -5,7 +5,7 @@ interface Props {
   classNameGrowElement: string;
 }
 
-interface HTMLHook {
+export interface HTMLHook {
   isExpanded: boolean;
   toggleElement: () => void;
 }

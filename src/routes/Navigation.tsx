@@ -1,7 +1,7 @@
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { ScrollToHashElement } from "../components/scroll/ScrollToHashElement";
-import { Navbar } from "../components/navbar/Navbar";
-import { HomeSection, ServicesSection } from "../pages";
+import { Navbar } from "../components/navbar";
+import { AboutPageSection, HomePageSection, PortfolioPageSection, ServicesPageSection } from "../pages";
 
 const Root = () => {
   return (
@@ -22,17 +22,13 @@ const router = createBrowserRouter([
         path: "/",
         Component: () => (
         <>
-          <HomeSection/>
+          <HomePageSection id="home" />
 
-          <ServicesSection/>
+          <ServicesPageSection id="services" position="left"/>
 
-          <section id="portfolio" className="scroll-mt-[3.75rem] md:scroll-mt-16 mySection h-[1200px] bg-pastel-orange text-white">
-            <div className="h-44 bg-united-nations-blue border border-[red]">Section Portfolio</div>
-          </section>
+          <PortfolioPageSection id="portfolio" position="right"/>
 
-          <section id="about" className="scroll-mt-[3.75rem] md:scroll-mt-16 mySection h-[1200px] bg-space-cadet text-white">
-            <div className="h-44 bg-united-nations-blue border border-[red]">Section About</div>
-          </section>
+          <AboutPageSection id="about" position="left"/>
 
           <section id="news" className="scroll-mt-[3.75rem] md:scroll-mt-16 mySection h-[1200px] bg-pastel-orange text-white">
             <div className="h-44 bg-united-nations-blue border border-[red]">Section News</div>

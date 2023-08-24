@@ -18,9 +18,10 @@ export default {
     },
 
     screens: {
+      xs: "351px",
       sm: "641px",
       md: "926px",
-      lg: "1025px",
+      lg: "1021px",
       xl: "1271px",
     },
 
@@ -33,6 +34,12 @@ export default {
       backgroundPosition: {
         "center-top": "center top",
       },
+      transitionProperty: {
+        'order-opacity': 'order, opacity',
+      },
+      transitionDuration: {
+        '1200': '1200ms'
+      }
     },
   },
   plugins: [],

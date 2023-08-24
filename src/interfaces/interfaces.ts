@@ -1,16 +1,11 @@
-import { CSSProperties, ReactNode } from "react";
-
-interface ComponentBaseProps {
-  className?: string;
-  style?: CSSProperties;
-  id?: string;
-  onClick?: () => void;
-}
-
-export interface HOCProps extends ComponentBaseProps {
-  children: ReactNode;
-}
-
-export interface ComponentProps extends ComponentBaseProps {
-  children?: ReactNode;
+export interface ColorText {
+  home: string;
+  services: string;
+  portfolio: string;
+  about: string;
+  news: string;
+  video: string;
+  skills: string;
+  contact: string;
+  [key: string]: string;
 }

@@ -1,0 +1,1 @@
+export { spliter } from "./spliter";

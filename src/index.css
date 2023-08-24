@@ -13,7 +13,7 @@
   }
 }
 
-/* to use with useHTMLElementExpanded */
+/* para utilizarlo con useHTMLElementExpanded */
 #grow-parent {
   @media (min-width: 926px) {
     height: 4rem !important;
@@ -26,7 +26,9 @@
   }
 }
 
-
-.animate__animated.animate__fadeIn {
-  --animate-duration: 1.5s;
+/* Esto limpiará los floats y hará que el contenedor se expanda para contenerlos. */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }
