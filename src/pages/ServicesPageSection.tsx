@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import { useNavbarStyles } from "../hooks";
-import { Section } from "../components/section/Section";
-import { icon01, icon02, icon03, icon04 } from "../assets/images";
+import {
+  Section,
+  SectionContent,
+  SectionTitle,
+  SectionWrapper,
+} from "../components/section";
+
 import { SVGNavigationArrowRight } from "../components/svg/SVGNavigationArrowRight";
-import { SectionContent, SectionTitle } from "../components/section";
+import { icon01, icon02, icon03, icon04 } from "../assets/images";
 
 type Position = "left" | "right";
 
@@ -15,13 +20,12 @@ interface Props {
 export const ServicesPageSection = React.forwardRef<HTMLDivElement, Props>(
   (props, ref) => {
     const [isActive, setIsActive] = useState(true);
-    const { id, position } = props;
+    const { id, position = "left" } = props;
     const { myRef } = useNavbarStyles();
 
     return (
       <Section id={id} ref={ref} className="bg-space-cadet lg:pb-0">
-        <div className="relative text-white m-0 mx-auto max-[1020px]:w-full max-[1270px]:w-[60rem] w-[73.125rem]">
-          {/* titulo */}
+        <SectionWrapper position={position}>
           <SectionTitle
             id={id}
             ref={myRef}
@@ -29,11 +33,9 @@ export const ServicesPageSection = React.forwardRef<HTMLDivElement, Props>(
             title="services"
             bgClass="bg-ufo-green"
             numberColorClass="text-ufo-green-2"
-            position={position}
           />
 
-          {/* contenido */}
-          <SectionContent>
+          <SectionContent position={position}>
             <div className="p-0 px-[5%] lg:px-[3.75rem] w-full">
               <div className="w-full">
                 <button
@@ -98,14 +100,7 @@ export const ServicesPageSection = React.forwardRef<HTMLDivElement, Props>(
               </div>
             </div>
           </SectionContent>
-
-          {/* <div className="bg-white w-full lg:w-[710px] xl:w-[800px] m-0 p-0 py-[1.875rem] lg:pt-[3.75rem] lg:ml-[250px] xl:ml-[370px] text-space-cadet">
-
-          </div> */}
-
-          {/* div 3 */}
-          <div></div>
-        </div>
+        </SectionWrapper>
       </Section>
     );
   }

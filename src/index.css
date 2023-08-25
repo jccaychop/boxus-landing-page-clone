@@ -25,10 +25,3 @@
     min-height: 0px;
   }
 }
-
-/* Esto limpiará los floats y hará que el contenedor se expanda para contenerlos. */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}

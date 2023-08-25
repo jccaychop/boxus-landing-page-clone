@@ -1,5 +1,5 @@
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import { ScrollToHashElement } from "../components/scroll/ScrollToHashElement";
+import { ScrollToHashElement } from "../components/scroll";
 import { Navbar } from "../components/navbar";
 import { AboutPageSection, HomePageSection, PortfolioPageSection, ServicesPageSection } from "../pages";
 
@@ -30,19 +30,19 @@ const router = createBrowserRouter([
 
           <AboutPageSection id="about" position="left"/>
 
-          <section id="news" className="scroll-mt-[3.75rem] md:scroll-mt-16 mySection h-[1200px] bg-pastel-orange text-white">
+          <section id="news" className="scroll-mt-16 mySection h-[1200px] bg-pastel-orange text-white">
             <div className="h-44 bg-united-nations-blue border border-[red]">Section News</div>
           </section>
 
-          <section id="video" className="scroll-mt-[3.75rem] md:scroll-mt-16 mySection h-[1200px] bg-space-cadet text-white">
+          <section id="video" className="scroll-mt-16 mySection h-[1200px] bg-space-cadet text-white">
             <div className="h-44 bg-united-nations-blue border border-[red]">Section Video</div>
           </section>
 
-          <section id="skills" className="scroll-mt-[3.75rem] md:scroll-mt-16 mySection h-[1200px] bg-pastel-orange text-white">
+          <section id="skills" className="scroll-mt-16 mySection h-[1200px] bg-pastel-orange text-white">
             <div className="h-44 bg-united-nations-blue border border-[red]">Section Skills</div>
           </section>
 
-          <section id="contact" className="scroll-mt-[3.75rem] md:scroll-mt-16 mySection h-[1200px] bg-space-cadet text-white">
+          <section id="contact" className="scroll-mt-16 mySection h-[1200px] bg-space-cadet text-white">
             <div className="h-44 bg-united-nations-blue border border-[red]">Section Contact</div>
           </section>
         </>

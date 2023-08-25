@@ -1,34 +1,22 @@
 import React from "react";
 
-type Position = "left" | "right";
-
 interface Props {
   id: string | undefined;
   number: string;
   title: string;
   bgClass: string;
   numberColorClass: string;
-  position?: Position;
 }
 
 export const SectionTitle = React.forwardRef<HTMLDivElement, Props>(
   (props, ref) => {
-    const {
-      id,
-      number,
-      title,
-      bgClass,
-      numberColorClass,
-      position = "left",
-    } = props;
+    const { id, number, title, bgClass, numberColorClass } = props;
 
     return (
       <div
         id={`sticky-${id}`}
         ref={ref}
-        className={`lg:sticky lg:top-16 w-full lg:w-[250px] lg:h-[250px] xl:w-[370px] xl:h-[370px] text-[2.1875rem] xs:text-[3.125rem] font-bold uppercase ${bgClass} ${
-          position === "right" ? "lg:float-right" : ""
-        }`}
+        className={`lg:sticky lg:top-16 w-full lg:w-[250px] lg:h-[250px] xl:w-[370px] xl:h-[370px] text-[2.1875rem] xs:text-[3.125rem] font-bold uppercase ${bgClass}`}
       >
         <div className="inline-block lg:block lg:text-[6.25rem] xl:text-[11.25rem] lg:h-28 xl:h-52 lg:overflow-hidden">
           <span

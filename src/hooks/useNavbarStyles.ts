@@ -19,7 +19,7 @@ export const useNavbarStyles = (): Hook => {
       const refStyles = window.getComputedStyle(refElement, null);
       const DOMRect = refElement?.getBoundingClientRect();
 
-      if (DOMRect.top >= 0 && DOMRect.top <= 65) {
+      if (DOMRect.top >= 0 && DOMRect.top <= 64) {
         setColor(refStyles.backgroundColor, idElement);
       }
     };

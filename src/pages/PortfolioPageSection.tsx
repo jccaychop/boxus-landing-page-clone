@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { useNavbarStyles } from "../hooks";
-import { Section } from "../components/section/Section";
-import { SectionContent, SectionTitle } from "../components/section";
+import {
+  Section,
+  SectionContent,
+  SectionTitle,
+  SectionWrapper,
+} from "../components/section";
 
-import { icon01, icon02, icon03, icon04 } from "../assets/images";
 import { SVGNavigationArrowRight } from "../components/svg/SVGNavigationArrowRight";
+import { icon01, icon02, icon03, icon04 } from "../assets/images";
 
 type Position = "left" | "right";
 
@@ -16,17 +20,12 @@ interface Props {
 export const PortfolioPageSection = React.forwardRef<HTMLDivElement, Props>(
   (props, ref) => {
     const [isActive, setIsActive] = useState(true);
-    const { id, position } = props;
+    const { id, position = "left" } = props;
     const { myRef } = useNavbarStyles();
 
     return (
-      <Section
-        id={id}
-        ref={ref}
-        className="bg-space-cadet border border-[red] lg:pb-0"
-      >
-        <div className="relative text-white m-0 mx-auto max-[1020px]:w-full max-[1270px]:w-[60rem] w-[73.125rem]">
-          {/* titulo */}
+      <Section id={id} ref={ref} className="bg-space-cadet lg:pb-0">
+        <SectionWrapper position={position}>
           <SectionTitle
             id={id}
             ref={myRef}
@@ -34,12 +33,10 @@ export const PortfolioPageSection = React.forwardRef<HTMLDivElement, Props>(
             title="portfolio"
             bgClass="bg-pastel-orange"
             numberColorClass="text-pastel-orange-2"
-            position={position}
           />
 
-          {/* contenido */}
           <SectionContent position={position}>
-          <div className="p-0 px-[5%] lg:px-[3.75rem] w-full">
+            <div className="p-0 px-[5%] lg:px-[3.75rem] w-full">
               <div className="w-full">
                 <button
                   className="absolute top-0 xs:top-3.5 lg:top-[9.5rem] xl:top-[17rem] lg:left-[19rem] xl:left-[26rem] right-[5%] mt-0.5 w-12 bg-transparent border-none outline-none "
@@ -106,7 +103,7 @@ export const PortfolioPageSection = React.forwardRef<HTMLDivElement, Props>(
 
           {/* div 3 */}
           <div></div>
-        </div>
+        </SectionWrapper>
       </Section>
     );
   }
