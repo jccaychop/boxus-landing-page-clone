@@ -18,7 +18,7 @@ export const NavbarContent = React.forwardRef<HTMLDivElement, Props>(
       <div
         ref={ref}
         style={{ backgroundColor: color }}
-        className=" sticky top-0 w-full z-20 md:h-16 min-h-[4rem]"
+        className=" sticky top-0 w-full  md:h-16 min-h-[4rem] z-20 transition-colors duration-700"
       >
         <div className="h-full min-h-[4rem]">
           <nav
@@ -26,20 +26,24 @@ export const NavbarContent = React.forwardRef<HTMLDivElement, Props>(
           >
             <div
               style={{ backgroundColor: color }}
-              className=" md:hidden font-bold text-3xl cursor-pointer z-30"
+              className=" md:hidden font-bold text-3xl cursor-pointer z-30 transition-colors duration-700"
               onClick={toggleElement}
             >
-              <p className="min-h-[4rem] text-center leading-[1.625rem] py-4 px-0">menu</p>
+              <p className="min-h-[4rem] text-center leading-[1.625rem] py-4 px-0">
+                menu
+              </p>
             </div>
 
             <div
-              style={{ backgroundColor: color }}
               id="grow-parent"
-              className={`absolute bg-space-cadet w-full top-16 md:top-0 md:block h-0 md:h-16 ${
+              className={`absolute bg-transparent w-full top-16 md:top-0 md:block h-0 md:h-16 ${
                 isExpanded ? "transition-[height] " : ""
               } duration-700 md:duration-0 overflow-hidden`}
             >
-              <ul className="grow-child bg-transparent md:h-16 max-w-xs md:max-w-none w-full m-0 mx-auto text-center">
+              <ul
+                style={{ backgroundColor: color }}
+                className="grow-child md:h-16 max-w-xs md:max-w-none min-w-full m-0 mx-auto text-center transition-colors duration-700"
+              >
                 {children}
               </ul>
             </div>
