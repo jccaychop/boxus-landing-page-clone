@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavbarStyles } from "../hooks";
 import {
   Section,
@@ -6,9 +6,16 @@ import {
   SectionTitle,
   SectionWrapper,
 } from "../components/section";
+import {
+  aboutImg01,
+  aboutImg02,
+  aboutImg03,
+  aboutImg04,
+  aboutImg05,
+  aboutImg06,
+} from "../assets/images";
 
-import { SVGNavigationArrowRight } from "../components/svg/SVGNavigationArrowRight";
-import { icon01, icon02, icon03, icon04 } from "../assets/images";
+import { Carousel, CarouselCard, CarouselItem } from "../components/carousel";
 
 type Position = "left" | "right";
 
@@ -19,7 +26,6 @@ interface Props {
 
 export const AboutPageSection = React.forwardRef<HTMLDivElement, Props>(
   (props, ref) => {
-    const [isActive, setIsActive] = useState(true);
     const { id, position = "left" } = props;
     const { myRef } = useNavbarStyles();
 
@@ -36,68 +42,70 @@ export const AboutPageSection = React.forwardRef<HTMLDivElement, Props>(
           />
 
           <SectionContent position={position}>
-            <div className="p-0 px-[5%] lg:px-[3.75rem] w-full">
-              <div className="w-full">
-                <button
-                  className="absolute top-0 xs:top-3.5 lg:top-[9.5rem] xl:top-[17rem] lg:left-[19rem] xl:left-[26rem] right-[5%] mt-0.5 w-12 bg-transparent border-none outline-none "
-                  onClick={() => setIsActive(!isActive)}
-                >
-                  <SVGNavigationArrowRight className="w-12 h-12 fill-white hover:fill-platinum" />
-                </button>
-                <div className="relative w-full border border-[red]">
-                  <ul className="overflow-hidden h-full flex flex-nowrap w-full border border-[blue]">
-                    <li
-                      className={`border border-[green] inline-block min-w-fit lg:flex lg:flex-row lg:flex-wrap ${
-                        !isActive ? "order-1 opacity-0" : ""
-                      } transition-order-opacity duration-1200 ease-in-out border border-[yellow]`}
-                    >
-                      {data1.map(({ title, content, src }) => (
-                        <div key={title} className="w-full lg:w-1/2">
-                          <img
-                            src={src}
-                            alt="icon"
-                            className="w-[3.125rem] h-auto inline-block lg:block xl:inline-block align-top"
-                          />
-                          <div className="inline-block lg:block xl:inline-block w-[calc(100%-70px)] mt-14 ml-1.5 mb-8">
-                            <div className="text-2xl pb-2.5 uppercase">
-                              {title}
-                            </div>
-                            <div className="font-Roboto text-base text-left">
-                              {content}
-                              <br />
-                            </div>
-                          </div>
-                        </div>
-                      ))}
+            <div className="w-full p-0">
+              <div className="p-0 px-[5%] lg:px-[3.75rem] xl:h-[370px] pt-8 pb-20 lg:pb-8 border-[red]">
+                <div className="relative lg:-top-[5.375rem] xl:-top-[6.7rem]">
+                  <h2 className="text-[19vw] lg:text-[8.75rem] xl:text-[11.25rem] leading-none uppercase text-center font-bold">
+                    About
+                  </h2>
+                </div>
+                <div className="relative xl:-top-14 font-Roboto lg:flex gap-12 xl:gap-24">
+                  <p className="flex-1 leading-[1.625rem] m-0 mb-9">
+                    Polor sit amet consectetur adipisicing elit sed eiusmod
+                    tempor incididunt ut dolore magna labore eiusmod. Lorem
+                    ipsum <strong>dolor sit amet</strong> consectetur est
+                    adipisicing elit, sed do eiusmod tempor
+                  </p>
+                  <ul className="flex-1 lg:leading-[1.625rem]">
+                    <li className="m-0 p-0">
+                      <strong className="text-dark-pink">2001-2003 · </strong>
+                      <em className="">Art Studio Lorem Donec</em>
                     </li>
-
-                    <li
-                      className={`border border-[orange] inline-block min-w-fit lg:flex lg:flex-row lg:flex-wrap ${
-                        isActive ? "order-1 opacity-0" : ""
-                      } transition-order-opacity duration-1200 ease-in-out border border-[yellow]`}
-                    >
-                      {data2.map(({ title, content, src }) => (
-                        <div key={title} className="w-full lg:w-1/2">
-                          <img
-                            src={src}
-                            alt="icon"
-                            className="w-[3.125rem] h-auto inline-block lg:block xl:inline-block align-top"
-                          />
-                          <div className="inline-block lg:block xl:inline-block w-[calc(100%-70px)] mt-14 ml-1.5 mb-8">
-                            <div className="text-2xl pb-2.5 uppercase">
-                              {title}
-                            </div>
-                            <div className="font-Roboto text-base text-left">
-                              {content}
-                              <br />
-                            </div>
-                          </div>
-                        </div>
-                      ))}
+                    <li className="m-0 p-0">
+                      <strong className="text-dark-pink">2003-2006 · </strong>
+                      <em className="">Per Set Web Site</em>
+                    </li>
+                    <li className="m-0 p-0">
+                      <strong className="text-dark-pink">2006-2010 · </strong>
+                      <em className="">Setera Donec EstNunc</em>
+                    </li>
+                    <li className="m-0 p-0">
+                      <strong className="text-dark-pink">2010-2013 · </strong>
+                      <em className="">Studio Labore Tempor</em>
+                    </li>
+                    <li className="m-0 p-0">
+                      <strong className="text-dark-pink">2013-2016 · </strong>
+                      <em className="">Magna Ipsum Amet</em>
                     </li>
                   </ul>
                 </div>
               </div>
+
+              {/* gallery 1 */}
+              <Carousel>
+                {dataCarousel1.map((item, index) => (
+                  <CarouselItem
+                    key={index}
+                    dataItem={item}
+                    sliderNumber={index}
+                  />
+                ))}
+              </Carousel>
+
+              {/* gallery 2 */}
+              <Carousel className="sm:left-auto sm:right-[38%]">
+                {dataCarousel2.map((item, index) => (
+                  <CarouselItem
+                    key={index}
+                    dataItem={item}
+                    sliderNumber={index}
+                    classNameCard="sm:flex"
+                    classNameImg="sm:flex-1 sm:min-w-[50%] xl:min-w-[370px]"
+                  >
+                    <CarouselCard {...item.cardContent} />
+                  </CarouselItem>
+                ))}
+              </Carousel>
             </div>
           </SectionContent>
 
@@ -109,56 +117,44 @@ export const AboutPageSection = React.forwardRef<HTMLDivElement, Props>(
   }
 );
 
-const data1 = [
+const dataCarousel1 = [
   {
-    title: "branding",
-    src: icon01,
-    content:
-      "Donecos arem ipsum sit amet consectetur adipisicing elit sed eiusmod tempor incididunt ut donecos dolore ipsum temporest.",
+    srcImage: aboutImg04,
   },
   {
-    title: "mobile apps",
-    src: icon02,
-    content:
-      "Disum lorem sit amet consectetur adipisicing elit sed eiusmod tempor incididunt ut donecos dolore ipsum temporest.",
+    srcImage: aboutImg05,
   },
   {
-    title: "web",
-    src: icon03,
-    content:
-      "Polor sit amet consectetur adipisicing elit sed eiusmod tempor incididunt ut dolore magna labore eiusmod.",
-  },
-  {
-    title: "graphic",
-    src: icon04,
-    content:
-      "Cadipisicing elit sed eiusmod tempor incididunt ut labore lorem ipsum dolor sit amet consectetur lorem ipsum dolor sit amet.",
+    srcImage: aboutImg06,
   },
 ];
 
-const data2 = [
+const dataCarousel2 = [
   {
-    title: "services",
-    src: icon03,
-    content:
-      "Donecos arem ipsum sit amet consectetur adipisicing elit sed eiusmod tempor incididunt ut donecos dolore ipsum temporest.",
+    srcImage: aboutImg01,
+    cardContent: {
+      name: "María Chu",
+      position: "lead designer",
+      content:
+        "Eiusmod tempor incididunt ut dolore magna labore eiusmod. Lorem ipsum dolor sit amet consectetur est lorem adipisicing elit, sed do eiusmod tempor polor sit amet consectetur.",
+    },
   },
   {
-    title: "psd",
-    src: icon04,
-    content:
-      "Disum lorem sit amet consectetur adipisicing elit sed eiusmod tempor incididunt ut donecos dolore ipsum temporest.",
+    srcImage: aboutImg02,
+    cardContent: {
+      name: "Robert Williams",
+      position: "seo master",
+      content:
+        "Eiusmod tempor incididunt ut dolore magna labore eiusmod. Lorem ipsum dolor sit amet consectetur est lorem adipisicing elit, sed do eiusmod tempor polor sit amet consectetur.",
+    },
   },
   {
-    title: "html",
-    src: icon02,
-    content:
-      "Polor sit amet consectetur adipisicing elit sed eiusmod tempor incididunt ut dolore magna labore eiusmod.",
-  },
-  {
-    title: "php",
-    src: icon01,
-    content:
-      "Cadipisicing elit sed eiusmod tempor incididunt ut labore lorem ipsum dolor sit amet consectetur lorem ipsum dolor sit amet.",
+    srcImage: aboutImg03,
+    cardContent: {
+      name: "Rebeca Smith",
+      position: "psd guru",
+      content:
+        "Eiusmod tempor incididunt ut dolore magna labore eiusmod. Lorem ipsum dolor sit amet consectetur est lorem adipisicing elit, sed do eiusmod tempor polor sit amet consectetur.",
+    },
   },
 ];

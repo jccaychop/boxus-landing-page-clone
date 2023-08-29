@@ -1,5 +1,9 @@
+import aboutImg01 from "./images/about_img_01.jpg";
 import aboutImg02 from "./images/about_img_02.jpg";
+import aboutImg03 from "./images/about_img_03.jpg";
 import aboutImg04 from "./images/about_img_04.jpg";
+import aboutImg05 from "./images/about_img_05.jpg";
+import aboutImg06 from "./images/about_img_06.jpg";
 import backgroundImg01 from "./images/background_img_01.jpg";
 import backgroundImg02 from "./images/background_img_02.jpg";
 import backgroundImg03 from "./images/background_img_03.jpg";
@@ -15,6 +19,7 @@ import iconDisplay from "./images/icon_display.png";
 import iconEditing from "./images/icon_editing.png";
 import iconIdeas from "./images/icon_ideas.png";
 import iconInfinity from "./images/icon_infinity.svg";
+import iconPost from "./images/icon_post.svg";
 import iconSolution from "./images/icon_solution.png";
 import iconSound from "./images/icon_sound.png";
 import iconTime from "./images/icon_time.png";
@@ -28,8 +33,12 @@ import portfolioItem08 from "./images/portfolio_item_08.jpg";
 import videoImg from "./images/video_img.jpg";
 
 export {
+  aboutImg01,
   aboutImg02,
+  aboutImg03,
   aboutImg04,
+  aboutImg05,
+  aboutImg06,
   backgroundImg01,
   backgroundImg02,
   backgroundImg03,
@@ -45,6 +54,7 @@ export {
   iconEditing,
   iconIdeas,
   iconInfinity,
+  iconPost,
   iconSolution,
   iconSound,
   iconTime,

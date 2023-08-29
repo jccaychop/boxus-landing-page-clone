@@ -16,11 +16,11 @@ export const SectionTitle = React.forwardRef<HTMLDivElement, Props>(
       <div
         id={`sticky-${id}`}
         ref={ref}
-        className={`lg:sticky lg:top-16 w-full lg:w-[250px] lg:h-[250px] xl:w-[370px] xl:h-[370px] text-[2.1875rem] xs:text-[3.125rem] font-bold uppercase ${bgClass}`}
+        className={`lg:sticky lg:top-16 w-full lg:w-[250px] lg:h-[250px] xl:w-[370px] xl:h-[370px] text-[2.1875rem] xs:text-[3.125rem] font-bold uppercase z-10 ${bgClass}`}
       >
         <div className="inline-block lg:block lg:text-[6.25rem] xl:text-[11.25rem] lg:h-28 xl:h-52 lg:overflow-hidden">
           <span
-            className={`text-ufo-green-2 m-0 -ml-2.5 lg:-ml-9 xl:-ml-16 tracking-[-5px] xs:-ml-4 ${numberColorClass}`}
+            className={`m-0 -ml-2.5 lg:-ml-9 xl:-ml-16 tracking-[-5px] xs:-ml-4 ${numberColorClass}`}
           >
             {number}
           </span>

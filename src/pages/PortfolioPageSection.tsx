@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavbarStyles } from "../hooks";
 import {
   Section,
@@ -7,8 +7,16 @@ import {
   SectionWrapper,
 } from "../components/section";
 
-import { SVGNavigationArrowRight } from "../components/svg/SVGNavigationArrowRight";
-import { icon01, icon02, icon03, icon04 } from "../assets/images";
+import { Grid, GridItem } from "../components/grid";
+
+import {
+  backgroundImg02,
+  portfolioItem01,
+  portfolioItem02,
+  portfolioItem05,
+  portfolioItem08,
+} from "../assets/images";
+import { LoadMore } from "../components/ui";
 
 type Position = "left" | "right";
 
@@ -19,12 +27,16 @@ interface Props {
 
 export const PortfolioPageSection = React.forwardRef<HTMLDivElement, Props>(
   (props, ref) => {
-    const [isActive, setIsActive] = useState(true);
     const { id, position = "left" } = props;
     const { myRef } = useNavbarStyles();
 
     return (
-      <Section id={id} ref={ref} className="bg-space-cadet lg:pb-0">
+      <Section
+        id={id}
+        ref={ref}
+        style={{ backgroundImage: `url(${backgroundImg02})` }}
+        className="bg-space-cadet lg:pb-0 bg-no-repeat bg-center-top bg-auto"
+      >
         <SectionWrapper position={position}>
           <SectionTitle
             id={id}
@@ -35,67 +47,37 @@ export const PortfolioPageSection = React.forwardRef<HTMLDivElement, Props>(
             numberColorClass="text-pastel-orange-2"
           />
 
-          <SectionContent position={position}>
-            <div className="p-0 px-[5%] lg:px-[3.75rem] w-full">
+          <SectionContent position={position} className="">
+            <div className="p-0 w-full">
               <div className="w-full">
-                <button
-                  className="absolute top-0 xs:top-3.5 lg:top-[9.5rem] xl:top-[17rem] lg:left-[19rem] xl:left-[26rem] right-[5%] mt-0.5 w-12 bg-transparent border-none outline-none "
-                  onClick={() => setIsActive(!isActive)}
-                >
-                  <SVGNavigationArrowRight className="w-12 h-12 fill-white hover:fill-platinum" />
-                </button>
-                <div className="relative w-full border border-[red]">
-                  <ul className="overflow-hidden h-full flex flex-nowrap w-full border border-[blue]">
-                    <li
-                      className={`border border-[green] inline-block min-w-fit lg:flex lg:flex-row lg:flex-wrap ${
-                        !isActive ? "order-1 opacity-0" : ""
-                      } transition-order-opacity duration-1200 ease-in-out border border-[yellow]`}
-                    >
-                      {data1.map(({ title, content, src }) => (
-                        <div key={title} className="w-full lg:w-1/2">
-                          <img
-                            src={src}
-                            alt="icon"
-                            className="w-[3.125rem] h-auto inline-block lg:block xl:inline-block align-top"
-                          />
-                          <div className="inline-block lg:block xl:inline-block w-[calc(100%-70px)] mt-14 ml-1.5 mb-8">
-                            <div className="text-2xl pb-2.5 uppercase">
-                              {title}
-                            </div>
-                            <div className="font-Roboto text-base text-left">
-                              {content}
-                              <br />
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </li>
+                <div className="relative w-full bg-space-cadet lg:flex lg:flex-col lg:items-end max-w-full">
+                  <Grid className="grid-cols-2 grid-rows-4 gap-0">
+                    <GridItem
+                      className="col-span-2 row-span-1"
+                      to=""
+                      imgSrc={portfolioItem01}
+                    />
 
-                    <li
-                      className={`border border-[orange] inline-block min-w-fit lg:flex lg:flex-row lg:flex-wrap ${
-                        isActive ? "order-1 opacity-0" : ""
-                      } transition-order-opacity duration-1200 ease-in-out border border-[yellow]`}
-                    >
-                      {data2.map(({ title, content, src }) => (
-                        <div key={title} className="w-full lg:w-1/2">
-                          <img
-                            src={src}
-                            alt="icon"
-                            className="w-[3.125rem] h-auto inline-block lg:block xl:inline-block align-top"
-                          />
-                          <div className="inline-block lg:block xl:inline-block w-[calc(100%-70px)] mt-14 ml-1.5 mb-8">
-                            <div className="text-2xl pb-2.5 uppercase">
-                              {title}
-                            </div>
-                            <div className="font-Roboto text-base text-left">
-                              {content}
-                              <br />
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </li>
-                  </ul>
+                    <GridItem
+                      className="col-span-1 row-span-1"
+                      to=""
+                      imgSrc={portfolioItem02}
+                    />
+
+                    <GridItem
+                      className="col-span-1 row-span-1"
+                      to=""
+                      imgSrc={portfolioItem08}
+                    />
+
+                    <GridItem
+                      className="col-span-2 row-span-2"
+                      to=""
+                      imgSrc={portfolioItem05}
+                    />
+                  </Grid>
+
+                  <LoadMore />
                 </div>
               </div>
             </div>
@@ -108,57 +90,3 @@ export const PortfolioPageSection = React.forwardRef<HTMLDivElement, Props>(
     );
   }
 );
-
-const data1 = [
-  {
-    title: "branding",
-    src: icon01,
-    content:
-      "Donecos arem ipsum sit amet consectetur adipisicing elit sed eiusmod tempor incididunt ut donecos dolore ipsum temporest.",
-  },
-  {
-    title: "mobile apps",
-    src: icon02,
-    content:
-      "Disum lorem sit amet consectetur adipisicing elit sed eiusmod tempor incididunt ut donecos dolore ipsum temporest.",
-  },
-  {
-    title: "web",
-    src: icon03,
-    content:
-      "Polor sit amet consectetur adipisicing elit sed eiusmod tempor incididunt ut dolore magna labore eiusmod.",
-  },
-  {
-    title: "graphic",
-    src: icon04,
-    content:
-      "Cadipisicing elit sed eiusmod tempor incididunt ut labore lorem ipsum dolor sit amet consectetur lorem ipsum dolor sit amet.",
-  },
-];
-
-const data2 = [
-  {
-    title: "services",
-    src: icon03,
-    content:
-      "Donecos arem ipsum sit amet consectetur adipisicing elit sed eiusmod tempor incididunt ut donecos dolore ipsum temporest.",
-  },
-  {
-    title: "psd",
-    src: icon04,
-    content:
-      "Disum lorem sit amet consectetur adipisicing elit sed eiusmod tempor incididunt ut donecos dolore ipsum temporest.",
-  },
-  {
-    title: "html",
-    src: icon02,
-    content:
-      "Polor sit amet consectetur adipisicing elit sed eiusmod tempor incididunt ut dolore magna labore eiusmod.",
-  },
-  {
-    title: "php",
-    src: icon01,
-    content:
-      "Cadipisicing elit sed eiusmod tempor incididunt ut labore lorem ipsum dolor sit amet consectetur lorem ipsum dolor sit amet.",
-  },
-];

@@ -7,7 +7,7 @@ import {
   SectionWrapper,
 } from "../components/section";
 
-import { SVGNavigationArrowRight } from "../components/svg/SVGNavigationArrowRight";
+import { ArrowButton } from "../components/ui";
 import { icon01, icon02, icon03, icon04 } from "../assets/images";
 
 type Position = "left" | "right";
@@ -35,15 +35,17 @@ export const ServicesPageSection = React.forwardRef<HTMLDivElement, Props>(
             numberColorClass="text-ufo-green-2"
           />
 
-          <SectionContent position={position}>
+          <SectionContent
+            position={position}
+            className="py-[1.875rem] lg:pt-[3.75rem]"
+          >
             <div className="p-0 px-[5%] lg:px-[3.75rem] w-full">
               <div className="w-full">
-                <button
-                  className="absolute top-0 xs:top-3.5 lg:top-[9.5rem] xl:top-[17rem] lg:left-[19rem] xl:left-[26rem] right-[5%] mt-0.5 w-12 bg-transparent border-none outline-none "
+                <ArrowButton
+                  className="top-0 xs:top-3.5 lg:top-[9.5rem] xl:top-[17rem] lg:left-[19rem] xl:left-[26rem] right-[5%] mt-0.5"
                   onClick={() => setIsActive(!isActive)}
-                >
-                  <SVGNavigationArrowRight className="w-12 h-12 fill-white hover:fill-platinum" />
-                </button>
+                />
+
                 <div className="relative w-full">
                   <ul className="overflow-hidden h-full flex flex-nowrap w-full">
                     <li
