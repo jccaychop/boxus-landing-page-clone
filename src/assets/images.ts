@@ -10,6 +10,7 @@ import backgroundImg03 from "./images/background_img_03.jpg";
 import backgroundImg04 from "./images/background_img_04.jpg";
 import backgroundImg05 from "./images/background_img_05.jpg";
 import backgroundImg06 from "./images/background_img_06.jpg";
+import backgroundImg07 from "./images/background_img_07.jpg";
 import icon01 from "./images/icon_01.png";
 import icon02 from "./images/icon_02.png";
 import icon03 from "./images/icon_03.png";
@@ -45,6 +46,7 @@ export {
   backgroundImg04,
   backgroundImg05,
   backgroundImg06,
+  backgroundImg07,
   icon01,
   icon02,
   icon03,

@@ -25,3 +25,29 @@
     min-height: 0px;
   }
 }
+
+/* react-multi-carousel */
+.react-multi-carousel-list {
+  position: static;
+}
+
+.react-multi-carousel-dot-list {
+  display: none;
+
+  /* 926 */
+  @media (min-width: 926px) {
+    display: flex;
+  }
+}
+
+.react-multi-carousel-dot button,
+.react-multi-carousel-dot--active button {
+  width: 35px;
+  height: 35px;
+  border: 5px solid white;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+.react-multi-carousel-dot--active button {
+  background-color: white;
+}

@@ -40,7 +40,7 @@ export const Navbar = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
       toggleElement={toggleElement}
     >
       {Object.keys(colorText).map((key) => (
-        <NavbarItem key={key} idActive={idActive} to={key} />
+        <NavbarItem key={key} idActive={idActive} to={key} onClick={toggleElement}/>
       ))}
     </NavbarContent>
   );

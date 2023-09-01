@@ -16,6 +16,7 @@ import {
   portfolioItem05,
   portfolioItem08,
 } from "../assets/images";
+
 import { LoadMore } from "../components/ui";
 
 type Position = "left" | "right";

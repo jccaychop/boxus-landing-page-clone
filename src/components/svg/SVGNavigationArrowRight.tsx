@@ -1,6 +1,8 @@
-import { ComponentProps } from "../../interfaces";
+interface Props {
+  className?: string;
+}
 
-export const SVGNavigationArrowRight: React.FC<ComponentProps> = ({
+export const SVGNavigationArrowRight: React.FC<Props> = ({
   className = "",
 }) => {
   return (

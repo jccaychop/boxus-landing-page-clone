@@ -26,7 +26,7 @@ export const SectionTitle = React.forwardRef<HTMLDivElement, Props>(
           </span>
         </div>
 
-        <h2 className="inline-block lg:w-[190px] xl:w-64 lg:text-[5rem] xl:text-[6.8125rem] lg:leading-[4.125rem] xl:leading-[5.3rem] break-all p-0 pl-2 lg:mt-9 xl:mt-5 lg:ml-[65px] xl:ml-28 tracking-[-3px]">
+        <h2 className="inline-block lg:w-[185px] xl:w-[252px] lg:text-[5rem] xl:text-[6.8125rem] lg:leading-[4.125rem] xl:leading-[5.3rem] break-all p-0 pl-2 lg:mt-9 xl:mt-5 lg:ml-[65px] xl:ml-28 tracking-[-3px]">
           {title}
         </h2>
       </div>

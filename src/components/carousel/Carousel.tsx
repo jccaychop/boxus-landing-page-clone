@@ -1,9 +1,11 @@
-import React, { ReactNode, createContext, useState } from "react";
+import React, { ReactNode, createContext } from "react";
 import { ArrowButton } from "../ui";
+import { useSlider } from "../../hooks";
 
 interface Props {
   children: ReactNode;
   className?: string;
+  totalItems: number;
 }
 
 type Context = {
@@ -12,13 +14,12 @@ type Context = {
 
 export const CarouselContext = createContext({} as Context);
 
-export const Carousel: React.FC<Props> = ({ className = "", children }) => {
-  const [slider, setSlider] = useState(0);
-
-  const nextSlider = () => {
-    const num = Math.min(slider + 1, 3);
-    num === 3 ? setSlider(0) : setSlider(num);
-  };
+export const Carousel: React.FC<Props> = ({
+  className = "",
+  totalItems,
+  children,
+}) => {
+  const { slider, nextSlider } = useSlider(totalItems);
 
   return (
     <CarouselContext.Provider value={{ slider }}>
@@ -27,9 +28,7 @@ export const Carousel: React.FC<Props> = ({ className = "", children }) => {
           className={`bottom-[30px] left-[30px] z-10 ${className}`}
           onClick={nextSlider}
         />
-        <div className="flex flex-nowrap overflow-hidden">
-          {children}
-        </div>
+        <div className="flex flex-nowrap overflow-hidden">{children}</div>
       </div>
     </CarouselContext.Provider>
   );

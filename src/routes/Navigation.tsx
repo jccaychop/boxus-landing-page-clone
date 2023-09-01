@@ -1,7 +1,17 @@
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { ScrollToHashElement } from "../components/scroll";
 import { Navbar } from "../components/navbar";
-import { AboutPageSection, HomePageSection, PortfolioPageSection, ServicesPageSection } from "../pages";
+import { Footer } from "../components/footer";
+import {
+  AboutPageSection,
+  HomePageSection,
+  NewsPageSection,
+  PortfolioPageSection,
+  ServicesPageSection,
+  VideoPageSection,
+  SkillsPageSection,
+  ContactPageSection,
+} from "../pages";
 
 const Root = () => {
   return (
@@ -9,6 +19,7 @@ const Root = () => {
       <ScrollToHashElement />
       <Navbar />
       <Outlet />
+      <Footer />
     </>
   );
 };
@@ -21,31 +32,23 @@ const router = createBrowserRouter([
       {
         path: "/",
         Component: () => (
-        <>
-          <HomePageSection id="home" />
+          <>
+            <HomePageSection id="home" />
 
-          <ServicesPageSection id="services" position="left"/>
+            <ServicesPageSection id="services" position="left" />
 
-          <PortfolioPageSection id="portfolio" position="right"/>
+            <PortfolioPageSection id="portfolio" position="right" />
 
-          <AboutPageSection id="about" position="left"/>
+            <AboutPageSection id="about" position="left" />
 
-          <section id="news" className="scroll-mt-16 mySection h-[1200px] bg-pastel-orange text-white">
-            <div className="h-44 bg-united-nations-blue border border-[red]">Section News</div>
-          </section>
+            <NewsPageSection id="news" position="right" />
 
-          <section id="video" className="scroll-mt-16 mySection h-[1200px] bg-space-cadet text-white">
-            <div className="h-44 bg-united-nations-blue border border-[red]">Section Video</div>
-          </section>
+            <VideoPageSection id="video" position="left" />
 
-          <section id="skills" className="scroll-mt-16 mySection h-[1200px] bg-pastel-orange text-white">
-            <div className="h-44 bg-united-nations-blue border border-[red]">Section Skills</div>
-          </section>
+            <SkillsPageSection id="skills" position="right" />
 
-          <section id="contact" className="scroll-mt-16 mySection h-[1200px] bg-space-cadet text-white">
-            <div className="h-44 bg-united-nations-blue border border-[red]">Section Contact</div>
-          </section>
-        </>
+            <ContactPageSection id="contact" position="left" />
+          </>
         ),
       },
     ],

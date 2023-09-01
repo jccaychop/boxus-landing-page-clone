@@ -3,9 +3,11 @@ import { useNavbarStyles } from "../hooks";
 import {
   Section,
   SectionContent,
+  SectionDescription,
   SectionTitle,
   SectionWrapper,
 } from "../components/section";
+
 import {
   aboutImg01,
   aboutImg02,
@@ -13,6 +15,7 @@ import {
   aboutImg04,
   aboutImg05,
   aboutImg06,
+  backgroundImg03,
 } from "../assets/images";
 
 import { Carousel, CarouselCard, CarouselItem } from "../components/carousel";
@@ -30,7 +33,12 @@ export const AboutPageSection = React.forwardRef<HTMLDivElement, Props>(
     const { myRef } = useNavbarStyles();
 
     return (
-      <Section id={id} ref={ref} className="bg-space-cadet lg:pb-0">
+      <Section
+        id={id}
+        ref={ref}
+        style={{ backgroundImage: `url(${backgroundImg03})` }}
+        className="bg-space-cadet lg:pb-0 bg-no-repeat bg-center-top bg-cover"
+      >
         <SectionWrapper position={position}>
           <SectionTitle
             id={id}
@@ -42,47 +50,14 @@ export const AboutPageSection = React.forwardRef<HTMLDivElement, Props>(
           />
 
           <SectionContent position={position}>
-            <div className="w-full p-0">
-              <div className="p-0 px-[5%] lg:px-[3.75rem] xl:h-[370px] pt-8 pb-20 lg:pb-8 border-[red]">
-                <div className="relative lg:-top-[5.375rem] xl:-top-[6.7rem]">
-                  <h2 className="text-[19vw] lg:text-[8.75rem] xl:text-[11.25rem] leading-none uppercase text-center font-bold">
-                    About
-                  </h2>
-                </div>
-                <div className="relative xl:-top-14 font-Roboto lg:flex gap-12 xl:gap-24">
-                  <p className="flex-1 leading-[1.625rem] m-0 mb-9">
-                    Polor sit amet consectetur adipisicing elit sed eiusmod
-                    tempor incididunt ut dolore magna labore eiusmod. Lorem
-                    ipsum <strong>dolor sit amet</strong> consectetur est
-                    adipisicing elit, sed do eiusmod tempor
-                  </p>
-                  <ul className="flex-1 lg:leading-[1.625rem]">
-                    <li className="m-0 p-0">
-                      <strong className="text-dark-pink">2001-2003 · </strong>
-                      <em className="">Art Studio Lorem Donec</em>
-                    </li>
-                    <li className="m-0 p-0">
-                      <strong className="text-dark-pink">2003-2006 · </strong>
-                      <em className="">Per Set Web Site</em>
-                    </li>
-                    <li className="m-0 p-0">
-                      <strong className="text-dark-pink">2006-2010 · </strong>
-                      <em className="">Setera Donec EstNunc</em>
-                    </li>
-                    <li className="m-0 p-0">
-                      <strong className="text-dark-pink">2010-2013 · </strong>
-                      <em className="">Studio Labore Tempor</em>
-                    </li>
-                    <li className="m-0 p-0">
-                      <strong className="text-dark-pink">2013-2016 · </strong>
-                      <em className="">Magna Ipsum Amet</em>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+            <div className="p-0 w-full">
+              <SectionDescription
+                {...dataSection}
+                classColorText="text-dark-pink"
+              />
 
               {/* gallery 1 */}
-              <Carousel>
+              <Carousel totalItems={3}>
                 {dataCarousel1.map((item, index) => (
                   <CarouselItem
                     key={index}
@@ -93,7 +68,7 @@ export const AboutPageSection = React.forwardRef<HTMLDivElement, Props>(
               </Carousel>
 
               {/* gallery 2 */}
-              <Carousel className="sm:left-auto sm:right-[38%]">
+              <Carousel totalItems={3} className="sm:left-auto sm:right-[38%]">
                 {dataCarousel2.map((item, index) => (
                   <CarouselItem
                     key={index}
@@ -108,14 +83,24 @@ export const AboutPageSection = React.forwardRef<HTMLDivElement, Props>(
               </Carousel>
             </div>
           </SectionContent>
-
-          {/* div 3 */}
-          <div></div>
         </SectionWrapper>
       </Section>
     );
   }
 );
+
+const dataSection = {
+  title: "about",
+  description:
+    "Polor sit amet consectetur adipisicing elit sed eiusmod tempor incididunt ut dolore magna labore eiusmod. Lorem ipsum <strong>dolor sit amet</strong> consectetur est adipisicing elit, sed do eiusmod tempor",
+  list: [
+    { years: "2001-2003 · ", desc: "Art Studio Lorem Donec" },
+    { years: "2003-2006 · ", desc: "Per Set Web Site" },
+    { years: "2006-2010 · ", desc: "Setera Donec EstNunc" },
+    { years: "2010-2013 · ", desc: "Studio Labore Tempor" },
+    { years: "2013-2016 · ", desc: "Magna Ipsum Amet" },
+  ],
+};
 
 const dataCarousel1 = [
   {

@@ -39,7 +39,7 @@ export const ServicesPageSection = React.forwardRef<HTMLDivElement, Props>(
             position={position}
             className="py-[1.875rem] lg:pt-[3.75rem]"
           >
-            <div className="p-0 px-[5%] lg:px-[3.75rem] w-full">
+            <div className="p-0 w-full px-[5%] lg:px-[3.75rem]">
               <div className="w-full">
                 <ArrowButton
                   className="top-0 xs:top-3.5 lg:top-[9.5rem] xl:top-[17rem] lg:left-[19rem] xl:left-[26rem] right-[5%] mt-0.5"

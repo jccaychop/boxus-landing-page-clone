@@ -19,6 +19,8 @@ export const HomePageSection = React.forwardRef<HTMLDivElement, Props>(
         style={{ backgroundImage: `url(${backgroundImg01})` }}
         className="pb-[10.625rem] bg-space-cadet bg-repeat bg-center-top bg-cover home-section"
       >
+        <div id={`sticky-${id}`} ref={myRef} className="bg-space-cadet"></div>
+        
         <div className="text-white text-center m-0 mx-auto max-[1020px]:w-full max-[1270px]:w-[60rem] w-[73.125rem]">
           <img
             src={logo}
@@ -34,8 +36,6 @@ export const HomePageSection = React.forwardRef<HTMLDivElement, Props>(
             Support bright students today for a better tomorrow
           </p>
         </div>
-
-        <div id={`sticky-${id}`} ref={myRef} className="bg-space-cadet"></div>
       </Section>
     );
   }

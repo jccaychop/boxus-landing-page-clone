@@ -15,7 +15,7 @@ export const Section = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
       id={id}
       ref={ref}
       style={style}
-      className={`relative pb-[9.375rem] m-0 mx-auto min-h-[calc(100vh-4rem)] max-[1020px]:pb-[150px] scroll-mt-16 ${className}`}
+      className={`relative pb-[9.375rem] m-0 mx-auto min-h-[calc(100vh-4rem)] scroll-mt-[63px] ${className}`}
     >
       {children}
     </section>
